@@ -1,15 +1,17 @@
+# Используем официальный Node.js образ
+FROM node:16
+
 # Устанавливаем рабочую директорию
 WORKDIR /app
 
-# Копируем файлы package.json и package-lock.json
+# Копируем package.json и package-lock.json в рабочую директорию
 COPY package*.json ./
-RUN rm -rf node_modules package-lock.json
 
-# Очистка кеша и установка зависимостей
+# Очистка кеша npm и установка зависимостей
 RUN npm cache clean --force
 RUN npm install --no-cache --legacy-peer-deps
 
-# Копируем все остальные файлы в контейнер
+# Копируем все остальные файлы в рабочую директорию
 COPY . .
 
 # Команда для запуска приложения
