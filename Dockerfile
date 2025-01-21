@@ -1,6 +1,5 @@
 # Используем официальный Node.js образ
-FROM node:16
-ENV HOST 0.0.0.0
+FROM node:18
 
 # Устанавливаем рабочую директорию
 WORKDIR /app
@@ -8,7 +7,7 @@ WORKDIR /app
 # Копируем package.json и package-lock.json в рабочую директорию
 COPY package*.json ./
 
-# Очистка кеша npm и установка зависимостей
+# Очистка кеша npm и установка зависимостей с игнорированием ошибок
 RUN npm cache clean --force
 RUN npm install
 
