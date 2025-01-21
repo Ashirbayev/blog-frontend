@@ -9,7 +9,7 @@ COPY package*.json ./
 
 # Очистка кеша npm и установка зависимостей
 RUN npm cache clean --force
-RUN npm install --no-cache --legacy-peer-deps
+RUN npm install --no-cache
 
 # Копируем все остальные файлы в рабочую директорию
 COPY . .
