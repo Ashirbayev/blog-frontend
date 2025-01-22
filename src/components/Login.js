@@ -13,7 +13,7 @@ const Login = ({ onLogin }) => {
 
         axios.post('http://localhost:3000/api/users/login', userCredentials)
             .then(response => {
-                console.log('Login successful:', response.data);
+
                 localStorage.setItem('token', response.data.token); // Сохраняем токен в localStorage
                 onLogin(); // Вызываем функцию onLogin для переключения на список постов
             })

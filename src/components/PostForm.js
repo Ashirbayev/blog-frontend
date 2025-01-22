@@ -55,7 +55,7 @@ const PostForm = () => {
                 });
         } else {
             // Если добавляем новый пост
-            console.log(postData);
+
             axios
                 .post(`${apiUrl}/api/posts/posts`, postData, {
                     headers: { Authorization: `Bearer ${token}` },

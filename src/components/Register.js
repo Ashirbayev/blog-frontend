@@ -14,7 +14,6 @@ const Register = ({ onRegister }) => {
 
         axios.post('http://localhost:3000/api/users/register', newUser)
             .then(response => {
-                console.log('Registration successful:', response.data);
                 onRegister();  // Вызываем функцию onRegister, чтобы переключиться на страницу входа
             })
             .catch(error => {

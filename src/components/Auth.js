@@ -5,7 +5,6 @@ import './Auth.css'; // Импортируем стили
 const apiUrl = 'https://blog-backend-production-2333.up.railway.app';
 
 const Auth = () => {
-    console.log(1111)
     const [isLogin, setIsLogin] = useState(true); // Состояние для переключения между логином и регистрацией
     const [formData, setFormData] = useState({
         username: '',
